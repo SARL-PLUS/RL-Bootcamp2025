@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://sarl-plus.github.io/RL-Bootcamp/ ">
+    <!-- replace WEBSITE with the address where this site is being hosted -->
+    <url>
+        <loc>WEBSITE</loc>
+    </url>
+
+    <url>
+        <loc>WEBSITE/directions</loc>
+    </url>
+</urlset>
