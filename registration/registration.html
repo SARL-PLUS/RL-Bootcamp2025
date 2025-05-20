@@ -1,0 +1,489 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <title>Registration – 2nd RL Bootcamp</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Registration for the 2nd Reinforcement Learning Bootcamp at PLUS University Salzburg">
+    
+    <base href="..">
+    <link rel="shortcut icon" type="image/png" href="assets/smile.png"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Resource hints for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Styles -->
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    
+    <!-- Fonts with display=swap for better performance -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet" type="text/css">
+    
+    <!-- Page-specific styles -->
+    <style>
+        /* Registration form styling */
+        .form-container {
+            background-color: var(--light-bg);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            margin-bottom: 40px;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 500;
+        }
+        
+        input[type="text"],
+        input[type="email"],
+        select,
+        textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1rem;
+        }
+        
+        textarea {
+            height: 120px;
+            resize: vertical;
+        }
+        
+        /* Timeline styling */
+        .timeline {
+            position: relative;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px 0;
+        }
+        
+        .timeline::after {
+            content: '';
+            position: absolute;
+            width: 4px;
+            background-color: var(--primary-color);
+            top: 0;
+            bottom: 0;
+            left: 50%;
+            margin-left: -2px;
+        }
+        
+        .timeline-item {
+            padding: 10px 40px;
+            position: relative;
+            width: 50%;
+            box-sizing: border-box;
+        }
+        
+        .timeline-item:nth-child(odd) {
+            left: 0;
+        }
+        
+        .timeline-item:nth-child(even) {
+            left: 50%;
+        }
+        
+        .timeline-content {
+            padding: 20px;
+            background-color: white;
+            border-radius: var(--border-radius);
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        
+        .timeline-date {
+            font-weight: 600;
+            color: var(--primary-color);
+        }
+        
+        /* Accordion for FAQ */
+        .accordion {
+            margin-bottom: 30px;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+        }
+        
+        .accordion-item {
+            border-bottom: 1px solid #eee;
+        }
+        
+        .accordion-header {
+            background-color: white;
+            padding: 18px;
+            width: 100%;
+            text-align: left;
+            border: none;
+            outline: none;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-weight: 500;
+            font-size: 1.05rem;
+        }
+        
+        .accordion-header:hover {
+            background-color: #f9f9f9;
+        }
+        
+        .accordion-content {
+            padding: 0 18px;
+            background-color: white;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.2s ease-out;
+        }
+        
+        .accordion-content.active {
+            padding: 18px;
+            max-height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header and Navigation -->
+    <header>
+        <div class="navbar">
+            <div class="logo">
+                <a href=".">RL<span>Bootcamp</span></a>
+            </div>
+            <ul class="nav-links">
+                <li><a href=".">Home</a></li>
+                <li class="has-dropdown">
+                    <a href="program/program.html">Program <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="program/program.html#overview">Overview</a></li>
+                        <li><a href="program/program.html#schedule">Schedule</a></li>
+                        <li><a href="program/program.html#speakers">Speakers</a></li>
+                        <li><a href="program/program.html#workshops">Workshops</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">
+                    <a href="registration/registration.html" class="active">Registration <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#overview">Overview</a></li>
+                        <li><a href="#form">Registration Form</a></li>
+                        <li><a href="#fees">Fees & Deadlines</a></li>
+                        <li><a href="#faq">FAQs</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">
+                    <a href="directions/directions.html">Directions <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="directions/directions.html#overview">Overview</a></li>
+                        <li><a href="directions/directions.html#venue">Venue</a></li>
+                        <li><a href="directions/directions.html#travel">Travel Info</a></li>
+                        <li><a href="directions/directions.html#accommodation">Accommodation</a></li>
+                    </ul>
+                </li>
+                <li class="has-dropdown">
+                    <a href="#">Resources <i class="fas fa-chevron-down"></i></a>
+                    <ul class="dropdown-menu">
+                        <li><a href="#materials">Materials</a></li>
+                        <li><a href="#previous">Previous Bootcamps</a></li>
+                        <li><a href="#papers">Research Papers</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Registration</h1>
+            <p>Join us for the 2nd Reinforcement Learning Bootcamp at PLUS University Salzburg</p>
+            <div class="cta-buttons">
+                <a href="#form" class="btn primary-btn">Register Now</a>
+                <a href="#fees" class="btn secondary-btn">View Fees & Deadlines</a>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="assets/bootcamp.jpg" alt="RL Bootcamp">
+        </div>
+    </section>
+
+    <!-- Overview Section -->
+    <section id="overview" class="container">
+        <div class="section-header">
+            <h2>Registration Overview</h2>
+            <p>Everything you need to know about registering for the 2nd RL Bootcamp</p>
+        </div>
+        <div class="highlight-box" style="background-color: var(--light-bg); padding: 30px; border-radius: var(--border-radius); margin-bottom: 40px;">
+            <p style="text-align: center; font-size: 1.1rem;">
+                The 2nd Reinforcement Learning Bootcamp is open to students, researchers, and professionals interested in reinforcement learning. 
+                Registration is completely <strong>free of charge</strong> thanks to our sponsors, but spaces are limited.
+                Please register early to secure your spot!
+            </p>
+        </div>
+        
+        <div class="features-grid">
+            <div class="feature-card">
+                <div class="icon"><i class="fas fa-calendar-alt"></i></div>
+                <h3>Important Dates</h3>
+                <p>Registration opens: April 15, 2025<br>
+                   Registration deadline: August 15, 2025<br>
+                   Bootcamp dates: September 17-19, 2025</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon"><i class="fas fa-user-plus"></i></div>
+                <h3>Who Can Attend</h3>
+                <p>The bootcamp is designed for participants with basic knowledge of machine learning concepts. 
+                   No prior experience with reinforcement learning is required.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon"><i class="fas fa-laptop"></i></div>
+                <h3>What to Bring</h3>
+                <p>Participants should bring their own laptop with Python installed. 
+                   Pre-installation instructions will be sent after registration is confirmed.</p>
+            </div>
+            <div class="feature-card">
+                <div class="icon"><i class="fas fa-certificate"></i></div>
+                <h3>Certificate</h3>
+                <p>All participants will receive a certificate of completion after attending the bootcamp.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration Form Section -->
+    <section id="form" class="container">
+        <div class="section-header">
+            <h2>Registration Form</h2>
+            <p>Complete the form below to register for the 2nd RL Bootcamp</p>
+        </div>
+        
+        <div class="form-container">
+            <form id="registration-form" action="#" method="POST">
+                <div class="form-group">
+                    <label for="fullname">Full Name *</label>
+                    <input type="text" id="fullname" name="fullname" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">Email Address *</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="affiliation">Affiliation/Organization *</label>
+                    <input type="text" id="affiliation" name="affiliation" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="position">Position *</label>
+                    <select id="position" name="position" required>
+                        <option value="">Select your position</option>
+                        <option value="student">Student</option>
+                        <option value="researcher">Researcher</option>
+                        <option value="industry">Industry Professional</option>
+                        <option value="other">Other</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="experience">Experience with Machine Learning *</label>
+                    <select id="experience" name="experience" required>
+                        <option value="">Select your experience level</option>
+                        <option value="beginner">Beginner (0-1 years)</option>
+                        <option value="intermediate">Intermediate (1-3 years)</option>
+                        <option value="advanced">Advanced (3+ years)</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <label for="motivation">Motivation for Attending (max 300 words) *</label>
+                    <textarea id="motivation" name="motivation" required></textarea>
+                </div>
+                
+                <div class="form-group">
+                    <label for="dietary">Dietary Restrictions (if any)</label>
+                    <input type="text" id="dietary" name="dietary">
+                </div>
+                
+                <div class="form-group">
+                    <label for="accommodation">Do you need help with accommodation?</label>
+                    <select id="accommodation" name="accommodation">
+                        <option value="no">No</option>
+                        <option value="yes">Yes</option>
+                    </select>
+                </div>
+                
+                <div class="form-group">
+                    <button type="submit" class="btn primary-btn">Submit Registration</button>
+                </div>
+            </form>
+        </div>
+    </section>
+
+    <!-- Fees & Deadlines Section -->
+    <section id="fees" class="container">
+        <div class="section-header">
+            <h2>Fees & Deadlines</h2>
+            <p>Important information about registration fees and key dates</p>
+        </div>
+        
+        <div class="highlight-box" style="background-color: var(--light-bg); padding: 30px; border-radius: var(--border-radius); margin-bottom: 40px;">
+            <h3 style="text-align: center; margin-bottom: 20px;">Registration is Free of Charge!</h3>
+            <p style="text-align: center; font-size: 1.1rem;">
+                Thanks to our generous sponsors, there is no registration fee for the 2nd Reinforcement Learning Bootcamp.
+                However, spaces are limited and will be allocated on a first-come, first-served basis.
+            </p>
+        </div>
+        
+        <h3>Key Deadlines</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <p class="timeline-date">April 15, 2025</p>
+                    <h4>Registration Opens</h4>
+                    <p>The registration form will be available starting from this date.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <p class="timeline-date">June 30, 2025</p>
+                    <h4>Early Registration Deadline</h4>
+                    <p>Register by this date to ensure your participation and receive pre-bootcamp materials.</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <p class="timeline-date">August 15, 2025</p>
+                    <h4>Final Registration Deadline</h4>
+                    <p>Last day to register for the bootcamp (subject to availability).</p>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-content">
+                    <p class="timeline-date">September 1, 2025</p>
+                    <h4>Confirmation Emails</h4>
+                    <p>Final confirmation emails with detailed instructions will be sent to all participants.</p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="cta-buttons" style="text-align: center; margin-top: 40px;">
+            <a href="#form" class="btn primary-btn">Register Now</a>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section id="faq" class="container">
+        <div class="section-header">
+            <h2>Frequently Asked Questions</h2>
+            <p>Answers to common questions about registration and the bootcamp</p>
+        </div>
+        
+        <div class="accordion">
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    Is the bootcamp really free to attend?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="accordion-content">
+                    <p>Yes, the 2nd Reinforcement Learning Bootcamp is completely free to attend thanks to our sponsors. However, participants are responsible for their own travel and accommodation expenses.</p>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    What is the selection criteria if there are more applicants than spots?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="accordion-content">
+                    <p>While we primarily operate on a first-come, first-served basis, we also consider the diversity of backgrounds and motivations provided in the application. We aim to create a balanced group of participants to enhance the learning experience for everyone.</p>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    What is the expected skill level for participants?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="accordion-content">
+                    <p>The bootcamp is designed for participants with basic knowledge of machine learning concepts. Familiarity with Python programming is required, but prior experience with reinforcement learning is not necessary. We will cover both introductory and advanced topics.</p>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    Can I receive a certificate of participation?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="accordion-content">
+                    <p>Yes, all participants who attend the full three days of the bootcamp will receive a certificate of completion at the end of the event.</p>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    I registered but can no longer attend. What should I do?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="accordion-content">
+                    <p>Please notify us as soon as possible at rl-bootcamp@plus.ac.at if you can no longer attend. This allows us to offer your spot to someone on the waiting list.</p>
+                </div>
+            </div>
+            
+            <div class="accordion-item">
+                <button class="accordion-header">
+                    Will materials be provided after the bootcamp?
+                    <i class="fas fa-chevron-down"></i>
+                </button>
+                <div class="accordion-content">
+                    <p>Yes, all slides, code examples, and additional resources will be made available to participants after the bootcamp. The materials will also be publicly available on our GitHub repository.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+  
+    <!-- Footer -->
+    <footer>
+        <p>
+            Contact: <a href="mailto:rl-bootcamp@plus.ac.at">rl-bootcamp@plus.ac.at</a> |
+            <a href="https://twitter.com/rlbootcamp"><i class="fab fa-twitter"></i> @rlbootcamp</a> |
+            <a href="https://github.com/rlbootcamp"><i class="fab fa-github"></i> rlbootcamp</a>
+        </p>
+        <p>&copy; 2025 Reinforcement Learning Bootcamp. All rights reserved.</p>
+    </footer>
+    
+    <!-- JavaScript for Accordion functionality -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const accordionHeaders = document.querySelectorAll('.accordion-header');
+            
+            accordionHeaders.forEach(header => {
+                header.addEventListener('click', function() {
+                    this.classList.toggle('active');
+                    const content = this.nextElementSibling;
+                    
+                    if (content.classList.contains('active')) {
+                        content.classList.remove('active');
+                    } else {
+                        // Close all other open accordions
+                        document.querySelectorAll('.accordion-content').forEach(item => {
+                            item.classList.remove('active');
+                        });
+                        
+                        content.classList.add('active');
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,5 +1,162 @@
 /* main.css */
+/* General styling */
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    margin: 0;
+    padding: 0;
+    line-height: 1.6;
+    color: #333;
+    background-color: #fff;
+}
 
+/* Banner styling */
+.banner {
+    position: relative;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.banner img {
+    max-width: 100%;
+    height: auto;
+}
+
+.top-left {
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    text-align: left;
+}
+
+.bottom-right {
+    position: absolute;
+    bottom: 20px;
+    right: 20px;
+    font-size: 18px;
+    color: white;
+    text-align: right;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+}
+
+.title1 {
+    font-size: 32px;
+    font-weight: bold;
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    padding: 10px;
+    border-radius: 5px;
+    display: inline-block;
+}
+
+/* Navigation table styling */
+table.navigation {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 30px;
+    background-color: #f1f1f1;
+}
+
+td.navigation {
+    padding: 15px;
+    text-align: center;
+    border: 1px solid #ddd;
+}
+
+table.navigation a {
+    display: block;
+    text-decoration: none;
+    font-weight: bold;
+    color: #333;
+    padding: 10px;
+    transition: all 0.3s ease;
+}
+
+table.navigation a:hover {
+    background-color: #ddd;
+}
+
+table.navigation a.current {
+    color: #ff5733;
+    border-bottom: 2px solid #ff5733;
+}
+
+/* Main content styling */
+h2, h3 {
+    color: #333;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+
+h2 {
+    font-size: 24px;
+}
+
+h3 {
+    font-size: 20px;
+}
+
+p {
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+ul {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+li {
+    margin-bottom: 10px;
+}
+
+a {
+    color: #0066cc;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: underline;
+}
+
+/* Footer styling */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #f1f1f1;
+    color: #666;
+    margin-top: 50px;
+    font-size: 14px;
+}
+
+footer a {
+    color: #0066cc;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    .title1 {
+        font-size: 24px;
+    }
+    
+    .bottom-right {
+        font-size: 14px;
+    }
+    
+    table.navigation td {
+        display: block;
+        width: 100%;
+    }
+}
+
+/* Additional styles for highlighted content */
+.highlight-box {
+    background-color: #f9f9f9;
+    border-left: 5px solid #ff5733;
+    padding: 15px;
+    margin-bottom: 20px;
+}
 /* These are the colors and fonts used throughout the webpage.
  * I've listed them here so that a user may easily
  * do a search-and-replace for these to change the site theme.
@@ -382,59 +539,6 @@ footer {
 
     .description-cell {
       margin-top: 0.5rem;
-    }
-
-    /* Base styles for the table */
-    .table-container {
-      width: 100%;
-      border-collapse: collapse;
-    }
-
-    .table-container td {
-      padding: 1rem;
-      vertical-align: top;
-    }
-
-    .image-cell {
-      text-align: center; /* Centering content in the image cell */
-    }
-
-    .description-cell {
-      text-align: left; /* Align text to the left in the description cell */
-    }
-
-    /* Responsive styles */
-    @media only screen and (max-width: 1100px) {
-      .table-container {
-        display: block;
-        width: 100%;
-        overflow-x: auto; /* Adds horizontal scrolling if needed */
-      }
-
-      .table-container td {
-        display: block;
-        width: 100%;
-        box-sizing: border-box;
-        padding: 0.5rem;
-      }
-
-      .table-container td + td {
-        border-top: 1px solid #ddd; /* Adds a border to separate cells */
-      }
-
-      .image-cell img {
-        width: 100%; /* Ensures image fits within the cell */
-        height: auto; /* Keeps image aspect ratio */
-      }
-
-      .image-cell a {
-        display: block;
-        margin-top: 0.5rem;
-      }
-
-      .description-cell {
-        margin-top: 0.5rem;
-      }
     }
   }
 }

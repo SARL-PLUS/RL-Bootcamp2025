@@ -1,18 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <title>Registration - 2nd RL Bootcamp</title>
     <base href=".." />
-    <link rel="shortcut icon" type="image/png" href="assets/smile.png" />
-    <link rel="stylesheet" type="text/css" media="all" href="assets/main.css" />
-    <meta name="description" content="RL4AA'24" />
-    <meta name="resource-type" content="document" />
-    <meta name="distribution" content="global" />
-    <meta name="KeyWords" content="Conference" />
-      <meta charset="UTF-8">
-    <title>Registration</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="Registration for the 2nd Reinforcement Learning Bootcamp at PLUS University Salzburg">
+    <meta name="KeyWords" content="Conference, Reinforcement Learning, Bootcamp, Registration, Form">
+    <link rel="shortcut icon" type="image/png" href="assets/smile.png"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Resource hints for faster loading -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- Styles -->
+    <link href="styles.css" rel="stylesheet" type="text/css">
+    
+    <!-- Fonts with display=swap for better performance -->
+    <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet" type="text/css">
   </head>
 
- <body>
+  <body>
     <div class="banner">
         <img src="assets/bootcamp.jpg" alt="RL Bootcamp" width="1000">
         <div class="top-left">
@@ -23,54 +32,259 @@
         </div>
     </div>
 
-<table class="navigation">
-  <tr>
-    <td class="navigation">
-      <a         class="current" title="Conference Home Page" href=".">Home</a>
-    </td>
+    <table class="navigation">
+      <tr>
+        <td>
+          <a title="Conference Home Page" href=".">
+            <i class="fas fa-home icon"></i>Home
+          </a>
+        </td>
+        <td>
+          <a title="Program" href="program">
+            <i class="fas fa-calendar-alt icon"></i>Program
+          </a>
+        </td>
+        <td>
+          <a class="current" title="Register for free" href="registration">
+            <i class="fas fa-user-plus icon"></i>Registration
+          </a>
+        </td>
+        <td>
+          <a title="Directions to the Conference" href="directions">
+            <i class="fas fa-map-marker-alt icon"></i>Directions
+          </a>
+        </td>
+        <td>
+          <a title="Bootcamp Resources" href="resources">
+            <i class="fas fa-book icon"></i>Resources
+          </a>
+        </td>
+      </tr>
+    </table>
 
-      <td class="navigation">
-      <a
-        class="current"
-        title="Program"
-        href="program"
-        >Program</a
-      >
-    </td>
-    <td class="navigation">
-      <a
+    <h2 id="overview"><i class="fas fa-info-circle icon"></i>Registration Overview</h2>
+    <div class="highlight-box">
+      <p>
+        Registration for the 2nd Reinforcement Learning Bootcamp is <strong>free of charge</strong>, but spaces are limited. 
+        Please register early to secure your place. The registration deadline is <strong>August 15, 2025</strong>.
+      </p>
+    </div>
 
-        title="Register for free"
-        href="registration"
-        >Registration</a
-      >
-          </td>
-    <td class="navigation">
-      <a
-        class="current"
-        title="Directions to the Conference"
-        href="directions"
-        >Directions</a
-      >
-    </td>
-  </tr>
-</table>
+    <h2 id="form"><i class="fas fa-file-alt icon"></i>Registration Form</h2>
+    <form id="registration-form" class="registration-form">
+      <div class="form-group">
+        <label for="name">Full Name *</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="email">Email Address *</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="affiliation">Affiliation *</label>
+        <input type="text" id="affiliation" name="affiliation" placeholder="University or Organization" required>
+      </div>
+      
+      <div class="form-group">
+        <label for="position">Position *</label>
+        <select id="position" name="position" required>
+          <option value="">Please select...</option>
+          <option value="undergraduate">Undergraduate Student</option>
+          <option value="graduate">Graduate Student</option>
+          <option value="postdoc">Postdoctoral Researcher</option>
+          <option value="faculty">Faculty Member</option>
+          <option value="industry">Industry Professional</option>
+          <option value="other">Other</option>
+        </select>
+      </div>
+      
+      <div class="form-group">
+        <label for="workshops">Workshops You Plan to Attend *</label>
+        <div class="checkbox-group">
+          <label>
+            <input type="checkbox" name="workshop1" value="basic_rl"> Implementing Basic RL Algorithms
+          </label>
+          <label>
+            <input type="checkbox" name="workshop2" value="advanced_rl"> Implementing Advanced RL Techniques
+          </label>
+          <label>
+            <input type="checkbox" name="workshop3" value="complete_system"> Building a Complete RL System
+          </label>
+        </div>
+      </div>
+      
+      <div class="form-group">
+        <label for="dietary">Dietary Restrictions</label>
+        <input type="text" id="dietary" name="dietary" placeholder="Please list any dietary restrictions">
+      </div>
+      
+      <div class="form-group">
+        <label for="comments">Additional Comments or Questions</label>
+        <textarea id="comments" name="comments" rows="4"></textarea>
+      </div>
+      
+      <div class="form-group checkbox-single">
+        <label>
+          <input type="checkbox" name="terms" required> I agree to the <a href="#" target="_blank">terms and conditions</a> *
+        </label>
+      </div>
+      
+      <div class="form-buttons">
+        <button type="submit" class="btn primary-btn">Submit Registration</button>
+        <button type="reset" class="btn secondary-btn">Reset Form</button>
+      </div>
+      
+      <p class="form-note">* Required fields</p>
+    </form>
 
-<h2><b>Participation in the workshop is free of charge</b></h2>
-    <h2 style="color: #ff5733; background-color: #f1f1f1; padding: 10px;">Exciting News:</h2>
-<p style="color: #333333; background-color: #f9f9f9; padding: 10px; border-left: 5px solid #ff5733;">
-    We're thrilled to announce that the Bootcamp will once again take place in Salzburg from September 17th to 19th this year!
-    While registration is not open yet, stay tuned – it will be available very soon.
-</p>
+    <h2 id="fees"><i class="fas fa-money-bill-wave icon"></i>Registration Fees</h2>
+    <div class="highlight-box">
+      <p>
+        The 2nd Reinforcement Learning Bootcamp is offered <strong>free of charge</strong> to all participants, 
+        thanks to the generous support from our sponsors. This includes:
+      </p>
+      <ul>
+        <li><i class="fas fa-check icon"></i> Access to all keynote speeches</li>
+        <li><i class="fas fa-check icon"></i> Participation in workshops and tutorials</li>
+        <li><i class="fas fa-check icon"></i> Coffee breaks and lunches during the event</li>
+        <li><i class="fas fa-check icon"></i> Welcome reception on the first day</li>
+        <li><i class="fas fa-check icon"></i> Access to all bootcamp materials</li>
+      </ul>
+    </div>
+    
+    <h2 id="deadlines"><i class="fas fa-clock icon"></i>Important Deadlines</h2>
+    <ul>
+      <li><i class="fas fa-calendar-check icon"></i> <strong>Registration Opens:</strong> April 1, 2025</li>
+      <li><i class="fas fa-calendar-times icon"></i> <strong>Registration Closes:</strong> August 15, 2025</li>
+      <li><i class="fas fa-calendar-alt icon"></i> <strong>Workshop Preferences Selection Deadline:</strong> August 30, 2025</li>
+    </ul>
 
-<!--<p><b><a href="https://indico.scc.kit.edu/e/sarl-plus.rl.bootcamp">Registration is closed .</a></b></p>-->
-<p><b>If you have questions please contact us at <a href="mailto:sarl.ida.plus@gmail.com">sarl.ida.plus(at)gmail.com</a> or <a href="mailto:sarl.ida.plus@gmail.com">simon.hirlaender(at)plus.ac.at</a></b> </p>
-  </body>
+    <h2 id="faq"><i class="fas fa-question-circle icon"></i>Frequently Asked Questions</h2>
+    
+    <h3>Who can attend the bootcamp?</h3>
+    <p>
+      The bootcamp is open to anyone interested in reinforcement learning, including students, researchers, 
+      and industry professionals. Basic knowledge of machine learning concepts and Python programming is recommended.
+    </p>
+    
+    <h3>Do I need to bring my own laptop?</h3>
+    <p>
+      Yes, you should bring your own laptop for the hands-on workshop sessions. Setup instructions will be sent to 
+      registered participants prior to the event.
+    </p>
+    
+    <h3>Will certificates be provided?</h3>
+    <p>
+      Yes, all participants who attend the complete bootcamp will receive a certificate of participation.
+    </p>
+    
+    <h3>Can I cancel my registration?</h3>
+    <p>
+      Yes, you can cancel your registration at any time. However, we kindly ask you to inform us as soon as possible 
+      so we can offer your spot to someone else.
+    </p>
+    
+    <h3>Is accommodation included?</h3>
+    <p>
+      No, participants are responsible for arranging their own accommodation. Please see our 
+      <a href="directions#accommodation">Accommodation</a> page for recommended hotels near the venue.
+    </p>
+
+    <h3>How can I contact the organizers?</h3>
+    <p>
+      For any questions related to registration or the bootcamp in general, please contact: 
+      <a href="mailto:rl-bootcamp@plus.ac.at">rl-bootcamp@plus.ac.at</a>
+    </p>
+
+    <style>
+      /* Additional styles for the registration form */
+      .registration-form {
+        background-color: #f8f9fa;
+        padding: 30px;
+        border-radius: 8px;
+        margin: 20px 0 40px 0;
+        box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      }
+      
+      .form-group {
+        margin-bottom: 20px;
+      }
+      
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: 500;
+      }
+      
+      .form-group input, .form-group select, .form-group textarea {
+        width: 100%;
+        padding: 10px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        font-family: 'Poppins', sans-serif;
+      }
+      
+      .form-group input:focus, .form-group select:focus, .form-group textarea:focus {
+        outline: none;
+        border-color: #297caa;
+      }
+      
+      .checkbox-group label {
+        display: block;
+        margin-bottom: 10px;
+        font-weight: normal;
+      }
+      
+      .checkbox-single input {
+        width: auto;
+        margin-right: 8px;
+      }
+      
+      .checkbox-single label {
+        display: flex;
+        align-items: center;
+        font-weight: normal;
+      }
+      
+      .form-buttons {
+        display: flex;
+        gap: 15px;
+        margin-top: 30px;
+      }
+      
+      .form-note {
+        margin-top: 15px;
+        font-size: 0.9em;
+        color: #666;
+      }
+      
+      @media (max-width: 768px) {
+        .form-buttons {
+          flex-direction: column;
+          gap: 10px;
+        }
+      }
+    </style>
 
     <footer>
-      &copy; Conference Organizers &nbsp;|&nbsp; Design by
-      <a href="https://github.com/mikepierce">Mike Pierce</a> Redesign by
-      <a href="https://github.com/mathphyssim">Simon H.</a>
+      <p>&copy; 2025 2nd Reinforcement Learning Bootcamp</p>
+      <p>PLUS University Salzburg</p>
     </footer>
-
+    
+    <script>
+      // Simple form validation and submission
+      document.getElementById('registration-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        alert('Thank you for your registration! We will contact you soon with confirmation details.');
+        
+        // In a real application, you would send the form data to a server here
+        // This is just a placeholder for demonstration purposes
+        
+        // Reset the form after submission
+        this.reset();
+      });
+    </script>
+  </body>
 </html>
