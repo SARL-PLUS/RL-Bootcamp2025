@@ -150,6 +150,25 @@ section {
   margin: 0 auto;
 }
 
+/* Institution logos */
+.organizers-institutes .organizer-image {
+  height: 160px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: white;
+}
+.organizers-institutes .organizer-image img {
+  max-height: 100%;
+  max-width: 100%;
+  object-fit: contain;
+}
+.logo-tweak {
+  height: 100px;
+  width: auto;
+}
+
 /* Button Styles */
 .btn {
   display: inline-block;
