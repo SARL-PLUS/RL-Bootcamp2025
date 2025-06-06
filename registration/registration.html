@@ -5,21 +5,20 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Registration for the 2nd Reinforcement Learning Bootcamp at PLUS University Salzburg">
-    
-    <base href="..">
-    <link rel="shortcut icon" type="image/png" href="assets/smile.png"/>
+
+    <link rel="shortcut icon" type="image/png" href="../assets/smile.png"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Resource hints for faster loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
+
     <!-- Styles -->
-    <link href="styles.css" rel="stylesheet" type="text/css">
-    
+    <link href="../styles.css" rel="stylesheet" type="text/css">
+
     <!-- Fonts with display=swap for better performance -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet" type="text/css">
-    
+
     <!-- Page-specific styles -->
     <style>
         /* Registration form styling */
@@ -29,17 +28,17 @@
             border-radius: var(--border-radius);
             margin-bottom: 40px;
         }
-        
+
         .form-group {
             margin-bottom: 20px;
         }
-        
+
         label {
             display: block;
             margin-bottom: 8px;
             font-weight: 500;
         }
-        
+
         input[type="text"],
         input[type="email"],
         select,
@@ -51,12 +50,12 @@
             font-family: 'Poppins', sans-serif;
             font-size: 1rem;
         }
-        
+
         textarea {
             height: 120px;
             resize: vertical;
         }
-        
+
         /* Timeline styling */
         .timeline {
             position: relative;
@@ -64,7 +63,7 @@
             margin: 0 auto;
             padding: 20px 0;
         }
-        
+
         .timeline::after {
             content: '';
             position: absolute;
@@ -75,45 +74,45 @@
             left: 50%;
             margin-left: -2px;
         }
-        
+
         .timeline-item {
             padding: 10px 40px;
             position: relative;
             width: 50%;
             box-sizing: border-box;
         }
-        
+
         .timeline-item:nth-child(odd) {
             left: 0;
         }
-        
+
         .timeline-item:nth-child(even) {
             left: 50%;
         }
-        
+
         .timeline-content {
             padding: 20px;
             background-color: white;
             border-radius: var(--border-radius);
             box-shadow: 0 4px 8px rgba(0,0,0,0.1);
         }
-        
+
         .timeline-date {
             font-weight: 600;
             color: var(--primary-color);
         }
-        
+
         /* Accordion for FAQ */
         .accordion {
             margin-bottom: 30px;
             border-radius: var(--border-radius);
             overflow: hidden;
         }
-        
+
         .accordion-item {
             border-bottom: 1px solid #eee;
         }
-        
+
         .accordion-header {
             background-color: white;
             padding: 18px;
@@ -128,11 +127,11 @@
             font-weight: 500;
             font-size: 1.05rem;
         }
-        
+
         .accordion-header:hover {
             background-color: #f9f9f9;
         }
-        
+
         .accordion-content {
             padding: 0 18px;
             background-color: white;
@@ -140,7 +139,7 @@
             overflow: hidden;
             transition: max-height 0.2s ease-out;
         }
-        
+
         .accordion-content.active {
             padding: 18px;
             max-height: 500px;
@@ -153,21 +152,21 @@
     <header>
         <div class="navbar">
             <div class="logo">
-                <a href=".">RL<span>Bootcamp</span></a>
+                <a href="../index.html">RL<span>Bootcamp</span></a>
             </div>
             <ul class="nav-links">
-                <li><a href=".">Home</a></li>
+                <li><a href="../index.html">Home</a></li>
                 <li class="has-dropdown">
-                    <a href="program/program.html">Program <i class="fas fa-chevron-down"></i></a>
+                    <a href="../program/program.html">Program <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="program/program.html#overview">Overview</a></li>
-                        <li><a href="program/program.html#schedule">Schedule</a></li>
-                        <li><a href="program/program.html#speakers">Speakers</a></li>
-                        <li><a href="program/program.html#workshops">Workshops</a></li>
+                        <li><a href="../program/program.html#overview">Overview</a></li>
+                        <li><a href="../program/program.html#schedule">Schedule</a></li>
+                        <li><a href="../program/program.html#speakers">Speakers</a></li>
+                        <li><a href="../program/program.html#workshops">Workshops</a></li>
                     </ul>
                 </li>
                 <li class="has-dropdown">
-                    <a href="registration/registration.html" class="active">Registration <i class="fas fa-chevron-down"></i></a>
+                    <a href="../registration/registration.html" class="active">Registration <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
                         <li><a href="#overview">Overview</a></li>
 <!--                        <li><a href="#form">Registration Form</a></li>-->
@@ -176,21 +175,21 @@
                     </ul>
                 </li>
                 <li class="has-dropdown">
-                    <a href="directions/directions.html">Directions <i class="fas fa-chevron-down"></i></a>
+                    <a href="../directions/directions.html">Directions <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="directions/directions.html#overview">Overview</a></li>
-                        <li><a href="directions/directions.html#venue">Venue</a></li>
-                        <li><a href="directions/directions.html#travel">Travel Info</a></li>
-                        <li><a href="directions/directions.html#accommodation">Accommodation</a></li>
+                        <li><a href="../directions/directions.html#venue">Venue</a></li>
+                        <li><a href="../directions/directions.html#reach">How to Reach</a></li>
+                        <li><a href="../directions/directions.html#transport">Local Transport</a></li>
+                        <li><a href="../directions/directions.html#accommodation">Accommodation</a></li>
                     </ul>
                 </li>
                 <li class="has-dropdown">
-                    <a href="#">Resources <i class="fas fa-chevron-down"></i></a>
+                    <a href="../resources/resources.html">Resources <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="#materials">Materials</a></li>
-                        <li><a href="#previous">Previous Bootcamps</a></li>
-<!--                        <li><a href="#papers">Research Papers</a></li>-->
-                        <li><a href="#contact">Contact Us</a></li>
+                        <li><a href="../resources/resources.html#materials">Materials</a></li>
+                        <li><a href="../resources/resources.html#previous">Previous Bootcamps</a></li>
+<!--                        <li><a href="../resources/resources.html#papers">Research Papers</a></li>-->
+                        <li><a href="../resources/resources.html#contact">Contact Us</a></li>
                     </ul>
                 </li>
             </ul>
@@ -225,12 +224,12 @@
         </div>
         <div class="highlight-box" style="background-color: var(--light-bg); padding: 30px; border-radius: var(--border-radius); margin-bottom: 40px;">
             <p style="text-align: center; font-size: 1.1rem;">
-                The 2nd Reinforcement Learning Bootcamp is open to students, researchers, and professionals interested in reinforcement learning. 
+                The 2nd Reinforcement Learning Bootcamp is open to students, researchers, and professionals interested in reinforcement learning.
                 Registration is completely <strong>free of charge</strong> thanks to our sponsors, but spaces are limited.
                 Please register early to secure your spot!
             </p>
         </div>
-        
+
         <div class="features-grid">
             <div class="feature-card">
                 <div class="icon"><i class="fas fa-calendar-alt"></i></div>
@@ -242,13 +241,13 @@
             <div class="feature-card">
                 <div class="icon"><i class="fas fa-user-plus"></i></div>
                 <h3>Who Can Attend</h3>
-                <p>The bootcamp is designed for participants with basic knowledge of machine learning concepts. 
+                <p>The bootcamp is designed for participants with basic knowledge of machine learning concepts.
                    No prior experience with reinforcement learning is required.</p>
             </div>
             <div class="feature-card">
                 <div class="icon"><i class="fas fa-laptop"></i></div>
                 <h3>What to Bring</h3>
-                <p>Participants should bring their own laptop with Python installed. 
+                <p>Participants should bring their own laptop with Python installed.
                    Pre-installation instructions will be sent after registration is confirmed.</p>
 <!--            </div>-->
 <!--            <div class="feature-card">-->
@@ -266,7 +265,7 @@
             <h2>Fees & Deadlines</h2>
             <p>Important information about registration fees and key dates</p>
         </div>
-        
+
         <div class="highlight-box" style="background-color: var(--light-bg); padding: 30px; border-radius: var(--border-radius); margin-bottom: 40px;">
             <h3 style="text-align: center; margin-bottom: 20px;">Registration is Free of Charge!</h3>
             <p style="text-align: center; font-size: 1.1rem;">
@@ -274,7 +273,7 @@
                 However, spaces are limited and will be allocated on a first-come, first-served basis.
             </p>
         </div>
-        
+
         <h3>Key Deadlines</h3>
         <div class="timeline">
             <div class="timeline-item">
@@ -306,7 +305,7 @@
                 </div>
             </div>
         </div>
-        
+
 <!--        <div class="cta-buttons" style="text-align: center; margin-top: 40px;">-->
 <!--            <a href="#form" class="btn primary-btn">Register Now</a>-->
 <!--        </div>-->
@@ -318,7 +317,7 @@
             <h2>Frequently Asked Questions</h2>
             <p>Answers to common questions about registration and the bootcamp</p>
         </div>
-        
+
         <div class="accordion">
             <div class="accordion-item">
                 <button class="accordion-header">
@@ -329,7 +328,7 @@
                     <p>Yes, the 2nd Reinforcement Learning Bootcamp is completely free to attend thanks to our sponsors. However, participants are responsible for their own travel and accommodation expenses.</p>
                 </div>
             </div>
-            
+
             <div class="accordion-item">
                 <button class="accordion-header">
                     What is the selection criteria if there are more applicants than spots?
@@ -339,7 +338,7 @@
                     <p>While we primarily operate on a first-come, first-served basis, we also consider the diversity of backgrounds and motivations provided in the application. We aim to create a balanced group of participants to enhance the learning experience for everyone.</p>
                 </div>
             </div>
-            
+
             <div class="accordion-item">
                 <button class="accordion-header">
                     What is the expected skill level for participants?
@@ -349,9 +348,9 @@
                     <p>The bootcamp is designed for participants with basic knowledge of machine learning concepts. Familiarity with Python programming is required, but prior experience with reinforcement learning is not necessary. We will cover both introductory and advanced topics.</p>
                 </div>
             </div>
-            
 
-            
+
+
             <div class="accordion-item">
                 <button class="accordion-header">
                     I registered but can no longer attend. What should I do?
@@ -361,7 +360,7 @@
                     <p>Please notify us as soon as possible at sarl.ida.plus@gmail.com if you can no longer attend. This allows us to offer your spot to someone on the waiting list.</p>
                 </div>
             </div>
-            
+
             <div class="accordion-item">
                 <button class="accordion-header">
                     Will materials be provided after the bootcamp?
@@ -373,7 +372,7 @@
             </div>
         </div>
     </section>
-  
+
     <!-- Footer -->
     <footer>
         <p>
@@ -383,17 +382,17 @@
         </p>
         <p>&copy; 2025 Reinforcement Learning Bootcamp. All rights reserved.</p>
     </footer>
-    
+
     <!-- JavaScript for Accordion functionality -->
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const accordionHeaders = document.querySelectorAll('.accordion-header');
-            
+
             accordionHeaders.forEach(header => {
                 header.addEventListener('click', function() {
                     this.classList.toggle('active');
                     const content = this.nextElementSibling;
-                    
+
                     if (content.classList.contains('active')) {
                         content.classList.remove('active');
                     } else {
@@ -401,7 +400,7 @@
                         document.querySelectorAll('.accordion-content').forEach(item => {
                             item.classList.remove('active');
                         });
-                        
+
                         content.classList.add('active');
                     }
                 });

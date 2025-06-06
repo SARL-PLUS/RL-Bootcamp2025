@@ -5,18 +5,18 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="Program details for the 2nd Reinforcement Learning Bootcamp at PLUS University Salzburg">
-    
-    <base href="..">
-    <link rel="shortcut icon" type="image/png" href="assets/smile.png"/>
+
+    <!-- Removed base href -->
+    <link rel="shortcut icon" type="image/png" href="../assets/smile.png"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
     <!-- Resource hints for faster loading -->
     <link rel="preconnect" href="https://fonts.googleapis.com" crossorigin>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
+
     <!-- Styles -->
-    <link href="styles.css" rel="stylesheet" type="text/css">
-    
+    <link href="../styles.css" rel="stylesheet" type="text/css">
+
     <!-- Fonts with display=swap for better performance -->
     <link href="https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap" rel="stylesheet" type="text/css">
 </head>
@@ -26,12 +26,12 @@
     <header>
         <div class="navbar">
             <div class="logo">
-                <a href=".">RL<span>Bootcamp</span></a>
+                <a href="../index.html">RL<span>Bootcamp</span></a>
             </div>
             <ul class="nav-links">
-                <li><a href=".">Home</a></li>
+                <li><a href="../index.html">Home</a></li>
                 <li class="has-dropdown">
-                    <a href="program/program.html" class="active">Program <i class="fas fa-chevron-down"></i></a>
+                    <a href="../program/program.html" class="active">Program <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
                         <li><a href="#overview">Overview</a></li>
                         <li><a href="#schedule">Schedule</a></li>
@@ -40,30 +40,29 @@
                     </ul>
                 </li>
                 <li class="has-dropdown">
-                    <a href="registration/registration.html">Registration <i class="fas fa-chevron-down"></i></a>
+                    <a href="../registration/registration.html">Registration <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="registration/registration.html#overview">Overview</a></li>
-                        <li><a href="registration/registration.html#form">Registration Form</a></li>
-                        <li><a href="registration/registration.html#fees">Fees & Deadlines</a></li>
-                        <li><a href="registration/registration.html#faq">FAQs</a></li>
+                        <li><a href="../registration/registration.html#overview">Overview</a></li>
+                        <li><a href="../registration/registration.html#fees">Fees & Deadlines</a></li>
+                        <li><a href="../registration/registration.html#faq">FAQs</a></li>
                     </ul>
                 </li>
                 <li class="has-dropdown">
-                    <a href="directions/directions.html">Directions <i class="fas fa-chevron-down"></i></a>
+                    <a href="../directions/directions.html">Directions <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="directions/directions.html#venue">Venue</a></li>
-                        <li><a href="directions/directions.html#reach">How to Reach</a></li>
-                        <li><a href="directions/directions.html#transport">Local Transport</a></li>
-                        <li><a href="directions/directions.html#accommodation">Accommodation</a></li>
+                        <li><a href="../directions/directions.html#venue">Venue</a></li>
+                        <li><a href="../directions/directions.html#reach">How to Reach</a></li>
+                        <li><a href="../directions/directions.html#transport">Local Transport</a></li>
+                        <li><a href="../directions/directions.html#accommodation">Accommodation</a></li>
                     </ul>
                 </li>
                 <li class="has-dropdown">
-                    <a href="resources/resources.html">Resources <i class="fas fa-chevron-down"></i></a>
+                    <a href="../resources/resources.html">Resources <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
-                        <li><a href="resources/resources.html#materials">Materials</a></li>
-                        <li><a href="resources/resources.html#previous">Previous Bootcamps</a></li>
-                        <li><a href="resources/resources.html#papers">Research Papers</a></li>
-                        <li><a href="resources/resources.html#contact">Contact Us</a></li>
+                        <li><a href="../resources/resources.html#materials">Materials</a></li>
+                        <li><a href="../resources/resources.html#previous">Previous Bootcamps</a></li>
+                        <li><a href="../resources/resources.html#papers">Research Papers</a></li>
+                        <li><a href="../resources/resources.html#contact">Contact Us</a></li>
                     </ul>
                 </li>
             </ul>
@@ -74,7 +73,7 @@
             </div>
         </div>
     </header>
-    
+
     <!-- Hero Section -->
     <section class="hero">
         <div class="hero-content">
@@ -89,7 +88,7 @@
             <img src="../assets/bootcamp.jpg" alt="RL Bootcamp Program">
         </div>
     </section>
-    
+
     <!-- Overview Section -->
     <section id="overview" class="container">
         <div class="section-header">
@@ -102,21 +101,49 @@
             </p>
         </div>
     </section>
-    
+
     <!-- Schedule Section -->
     <section id="schedule" class="container">
         <div class="section-header">
             <h2>Schedule</h2>
             <p>Detailed agenda for September 17-19, 2025</p>
         </div>
-        
+
         <!-- Day 1 -->
         <div class="feature-card">
             <h3>Day 1: Wednesday, September 17</h3>
             <table style="width: 100%; border-collapse: collapse; margin-top: 20px;">
                 <tr style="border-bottom: 1px solid #ddd;">
-                    <td style="padding: 10px; width: 20%;"><strong>14:00 - 17:00</strong></td>
-                    <td style="padding: 10px;">Welcome Event & Registration</td>
+                    <td style="padding: 10px; width: 20%;"><strong>10:15 - 12:30</strong></td>
+                    <td style="padding: 10px;">Registration</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <td style="padding: 10px;"><strong>10:15 - 12:30</strong></td>
+                    <td style="padding: 10px;">Coffee and arrival</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <td style="padding: 10px;"><strong>12:30 - 13:30</strong></td>
+                    <td style="padding: 10px;">Lunch Break</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <td style="padding: 10px;"><strong>13:30 - 14:00</strong></td>
+                    <td style="padding: 10px;">Opening and introduction</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <td style="padding: 10px;"><strong>14:00 - 15:00</strong></td>
+                    <td style="padding: 10px;">Lecture 0 I - Introduction to Reinforcement Learning</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <td style="padding: 10px;"><strong>15:00 - 15:30</strong></td>
+                    <td style="padding: 10px;">Coffee Break</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <td style="padding: 10px;"><strong>15:30 - 16:30</strong></td>
+                    <td style="padding: 10px;">Lecture 0 II - RL Fundamentals</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <td style="padding: 10px;"><strong>16:30 - 17:00</strong></td>
+                    <td style="padding: 10px;">Coffee Break</td>
                 </tr>
                 <tr style="border-bottom: 1px solid #ddd;">
                     <td style="padding: 10px;"><strong>17:00 - 18:30</strong></td>
@@ -128,7 +155,7 @@
                 </tr>
             </table>
         </div>
-        
+
         <!-- Day 2 -->
         <div class="feature-card" style="margin-top: 30px;">
             <h3>Day 2: Thursday, September 18</h3>
@@ -154,20 +181,28 @@
                     <td style="padding: 10px;">Lunch Break</td>
                 </tr>
                 <tr style="border-bottom: 1px solid #ddd;">
-                    <td style="padding: 10px;"><strong>14:00 - 15:30</strong></td>
-                    <td style="padding: 10px;">Deep Lecture: "Advanced Policy Gradient Methods"</td>
+                    <td style="padding: 10px;"><strong>14:00 - 15:00</strong></td>
+                    <td style="padding: 10px;">Policy gradients and actor critics I</td>
                 </tr>
                 <tr style="border-bottom: 1px solid #ddd;">
-                    <td style="padding: 10px;"><strong>15:30 - 16:00</strong></td>
+                    <td style="padding: 10px;"><strong>15:00 - 15:15</strong></td>
+                    <td style="padding: 10px;">Coffee Break</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <td style="padding: 10px;"><strong>15:15 - 16:00</strong></td>
+                    <td style="padding: 10px;">Policy gradients and actor critics II</td>
+                </tr>
+                <tr style="border-bottom: 1px solid #ddd;">
+                    <td style="padding: 10px;"><strong>16:00 - 16:15</strong></td>
                     <td style="padding: 10px;">Coffee Break</td>
                 </tr>
                 <tr>
-                    <td style="padding: 10px;"><strong>16:00 - 18:00</strong></td>
+                    <td style="padding: 10px;"><strong>16:15 - 18:00</strong></td>
                     <td style="padding: 10px;">Hands-on Workshop: "Implementing PPO from Scratch"</td>
                 </tr>
             </table>
         </div>
-        
+
         <!-- Day 3 -->
         <div class="feature-card" style="margin-top: 30px;">
             <h3>Day 3: Friday, September 19</h3>
@@ -207,14 +242,14 @@
             </table>
         </div>
     </section>
-    
+
     <!-- Speakers Section -->
     <section id="speakers" class="container">
         <div class="section-header">
             <h2>Speakers</h2>
             <p>Meet our expert speakers and instructors</p>
         </div>
-        
+
         <div style="display: grid; grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); gap: 30px; margin-top: 40px;">
             <!-- Speaker 1 -->
             <div class="feature-card" style="text-align: center;">
@@ -223,7 +258,7 @@
                 <p>UC Berkeley</p>
                 <p>Pioneering researcher in deep reinforcement learning and robotic control</p>
             </div>
-            
+
             <!-- Speaker 2 -->
             <div class="feature-card" style="text-align: center;">
                 <img src="../assets/placeholder_speaker.jpg" alt="Peter Auer" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin: 0 auto 20px; display: block; box-shadow: var(--box-shadow);">
@@ -231,7 +266,7 @@
                 <p>University of Leoben</p>
                 <p>Leading expert in multi-armed bandits and exploration strategies</p>
             </div>
-            
+
             <!-- Speaker 3 -->
             <div class="feature-card" style="text-align: center;">
                 <img src="../assets/placeholder_speaker.jpg" alt="Samuele Tosatto" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin: 0 auto 20px; display: block; box-shadow: var(--box-shadow);">
@@ -239,7 +274,7 @@
                 <p>ETH Zürich</p>
                 <p>Specialist in policy optimization for reinforcement learning</p>
             </div>
-            
+
             <!-- Speaker 4 -->
             <div class="feature-card" style="text-align: center;">
                 <img src="../assets/placeholder_speaker.jpg" alt="Emerging Researcher" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin: 0 auto 20px; display: block; box-shadow: var(--box-shadow);">
@@ -249,14 +284,14 @@
             </div>
         </div>
     </section>
-    
+
     <!-- Workshops Section -->
     <section id="workshops" class="container">
         <div class="section-header">
             <h2>Workshops & Deep Lectures</h2>
             <p>Intensive learning experiences combining theory and practice</p>
         </div>
-        
+
         <div class="features-grid" style="margin-top: 40px;">
             <!-- Workshop 1 -->
             <div class="feature-card">
@@ -264,42 +299,42 @@
                 <h3>Setting Up Your RL Environment</h3>
                 <p>Configure Python environments with PyTorch, TensorFlow, and Gymnasium for state-of-the-art RL experimentation.</p>
             </div>
-            
+
             <!-- Workshop 2 -->
             <div class="feature-card">
                 <div class="icon"><i class="fas fa-robot"></i></div>
                 <h3>Implementing PPO from Scratch</h3>
                 <p>Build a Proximal Policy Optimization algorithm implementation step-by-step, with detailed code walkthroughs.</p>
             </div>
-            
+
             <!-- Workshop 3 -->
             <div class="feature-card">
                 <div class="icon"><i class="fas fa-project-diagram"></i></div>
                 <h3>Building World Models for RL</h3>
                 <p>Learn to create and train neural network models of environments to improve sample efficiency in RL training.</p>
             </div>
-            
+
             <!-- Workshop 4 -->
             <div class="feature-card">
                 <div class="icon"><i class="fas fa-users"></i></div>
                 <h3>Multi-Agent Systems Implementation</h3>
                 <p>Design and implement collaborative and competitive multi-agent reinforcement learning systems.</p>
             </div>
-            
+
             <!-- Deep Lecture 1 -->
             <div class="feature-card">
                 <div class="icon"><i class="fas fa-brain"></i></div>
                 <h3>Advanced Policy Gradient Methods</h3>
                 <p>In-depth exploration of state-of-the-art policy optimization techniques including PPO, TRPO, and SAC.</p>
             </div>
-            
+
             <!-- Deep Lecture 2 -->
             <div class="feature-card">
                 <div class="icon"><i class="fas fa-cube"></i></div>
                 <h3>Model-Based Reinforcement Learning</h3>
                 <p>Comprehensive review of model-based RL approaches, from Dyna-Q to modern deep learning architectures.</p>
             </div>
-            
+
             <!-- Deep Lecture 3 -->
             <div class="feature-card">
                 <div class="icon"><i class="fas fa-network-wired"></i></div>
