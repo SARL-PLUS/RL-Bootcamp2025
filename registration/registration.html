@@ -169,7 +169,6 @@
                     <a href="../registration/registration.html" class="active">Registration <i class="fas fa-chevron-down"></i></a>
                     <ul class="dropdown-menu">
                         <li><a href="#overview">Overview</a></li>
-<!--                        <li><a href="#form">Registration Form</a></li>-->
                         <li><a href="#fees">Fees & Deadlines</a></li>
                         <li><a href="#faq">FAQs</a></li>
                     </ul>
@@ -188,7 +187,6 @@
                     <ul class="dropdown-menu">
                         <li><a href="../resources/resources.html#materials">Materials</a></li>
                         <li><a href="../resources/resources.html#previous">Previous Bootcamps</a></li>
-<!--                        <li><a href="../resources/resources.html#papers">Research Papers</a></li>-->
                         <li><a href="../resources/resources.html#contact">Contact Us</a></li>
                     </ul>
                 </li>
@@ -249,12 +247,6 @@
                 <h3>What to Bring</h3>
                 <p>Participants should bring their own laptop with Python installed.
                    Pre-installation instructions will be sent after registration is confirmed.</p>
-<!--            </div>-->
-<!--            <div class="feature-card">-->
-<!--                <div class="icon"><i class="fas fa-certificate"></i></div>-->
-<!--                <h3>Certificate</h3>-->
-<!--                <p>All participants will receive a certificate of completion after attending the bootcamp.</p>-->
-<!--            </div>-->
         </div>
     </section>
 
@@ -283,13 +275,6 @@
                     <p>The registration form will be available starting from this date.</p>
                 </div>
             </div>
-<!--            <div class="timeline-item">-->
-<!--                <div class="timeline-content">-->
-<!--                    <p class="timeline-date">June 30, 2025</p>-->
-<!--                    <h4>Early Registration Deadline</h4>-->
-<!--                    <p>Register by this date to ensure your participation and receive pre-bootcamp materials.</p>-->
-<!--                </div>-->
-<!--            </div>-->
             <div class="timeline-item">
                 <div class="timeline-content">
                     <p class="timeline-date">August 31, 2025</p>
@@ -305,10 +290,6 @@
                 </div>
             </div>
         </div>
-
-<!--        <div class="cta-buttons" style="text-align: center; margin-top: 40px;">-->
-<!--            <a href="#form" class="btn primary-btn">Register Now</a>-->
-<!--        </div>-->
     </section>
 
     <!-- FAQ Section -->
@@ -413,6 +394,26 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const accordionHeaders = document.querySelectorAll('.accordion-header');
+            const burger = document.querySelector('.burger');
+            const nav = document.querySelector('.nav-links');
+            const navLinks = document.querySelectorAll('.nav-links li');
+
+            burger.addEventListener('click', function() {
+                // Toggle Nav
+                nav.classList.toggle('nav-active');
+
+                // Animate Links
+                navLinks.forEach((link, index) => {
+                    if (link.style.animation) {
+                        link.style.animation = '';
+                    } else {
+                        link.style.animation = `navLinkFade 0.5s ease forwards ${index / 7 + 0.3}s`;
+                    }
+                });
+
+                // Burger Animation
+                burger.classList.toggle('toggle');
+            });
 
             accordionHeaders.forEach(header => {
                 header.addEventListener('click', function() {
