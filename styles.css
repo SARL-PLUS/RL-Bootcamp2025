@@ -165,7 +165,7 @@ section {
   object-fit: contain;
 }
 .logo-tweak {
-  height: 100px;
+  height: auto;
   width: auto;
 }
 
