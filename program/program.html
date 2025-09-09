@@ -22,6 +22,7 @@
 </head>
 
 <body>
+    <a href="#main-content" class="skip-link">Skip to main content</a>
     <div class="tentative-banner" style="background-color: #fff3cd; color: #856404; text-align: center; padding: 10px 0; position: relative; z-index: 1000;">
       <p style="margin: 0;"><i class="fas fa-exclamation-triangle"></i> <strong>Important Notice:</strong> All event details including program and schedule are tentative and subject to change. Speakers are confirmed.</p>
     </div>
@@ -31,7 +32,7 @@
             <div class="logo">
                 <a href="../index.html">RL<span>Bootcamp</span></a>
             </div>
-            <ul class="nav-links">
+            <ul class="nav-links" id="primary-navigation">
                 <li><a href="../index.html">Home</a></li>
                 <li class="has-dropdown">
                     <a href="../program/program.html" class="active">Program <i class="fas fa-chevron-down"></i></a>
@@ -69,7 +70,7 @@
                     </ul>
                 </li>
             </ul>
-            <div class="burger">
+            <div class="burger" role="button" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="primary-navigation" tabindex="0">
                 <div class="line1"></div>
                 <div class="line2"></div>
                 <div class="line3"></div>
@@ -78,7 +79,7 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero">
+    <section class="hero" id="main-content">
         <div class="hero-content">
             <h1>Program Schedule</h1>
             <p>Detailed agenda for the 2nd Reinforcement Learning Bootcamp</p>
@@ -242,15 +243,14 @@
                     <td style="padding: 10px;">State of the art in deep reinforcement learning</td>
                 </tr>
                 <tr style="border-bottom: 1px solid #ddd;">
-                                    <tr style="border-bottom: 1px solid #ddd;">
                     <td style="padding: 10px;"><strong>12:30 - 13:00</strong></td>
                     <td style="padding: 10px;">Final Round and Closing Remarks</td>
                 </tr>
+                <tr style="border-bottom: 1px solid #ddd;">
                     <td style="padding: 10px;"><strong>13:00 - 14:00</strong></td>
                     <td style="padding: 10px;">Lunch Break</td>
                 </tr>
-
-                <tr style="border-bottom: 1px solid #ddd;">
+                <tr>
                     <td style="padding: 10px;"><strong>15:00 - 17:00</strong></td>
                     <td style="padding: 10px;">Salzburg Visit</td>
                 </tr>
@@ -368,7 +368,7 @@
         <div class="footer-content" style="display: flex; flex-wrap: wrap; justify-content: space-between; max-width: 1200px; margin: 0 auto; padding: 20px 0;">
             <div style="flex: 2; min-width: 300px; max-width: 700px; margin-bottom: 30px;">
                 <h3 style="margin-bottom: 15px; font-size: 1.5rem;">RL<span style="color: var(--primary-color);">Bootcamp</span></h3>
-                <p style="margin-bottom: 15px;"></p>
+                <p style="margin-bottom: 15px;">
                     The Reinforcement Learning Bootcamp is an annual event bringing together researchers, students, and practitioners
                     to learn about the latest advances in reinforcement learning.
                 </p>
@@ -403,10 +403,33 @@
     <script>
         document.addEventListener('DOMContentLoaded', function() {
             const burger = document.querySelector('.burger');
-            const nav = document.querySelector('.nav-links');
+            const nav = document.querySelector('#primary-navigation');
             const navLinks = document.querySelectorAll('.nav-links li');
 
-            burger.addEventListener('click', function() {
+            function closeAllDropdowns() {
+                document.querySelectorAll('.has-dropdown.open > a').forEach(t => {
+                    t.setAttribute('aria-expanded', 'false');
+                    const m = t.nextElementSibling;
+                    if (m) m.style.display = '';
+                    t.parentElement.classList.remove('open');
+                });
+            }
+
+            function openDropdown(toggle) {
+                const menu = toggle.nextElementSibling;
+                toggle.parentElement.classList.add('open');
+                toggle.setAttribute('aria-expanded', 'true');
+                if (menu) menu.style.display = 'block';
+            }
+
+            function closeDropdown(toggle) {
+                const menu = toggle.nextElementSibling;
+                toggle.parentElement.classList.remove('open');
+                toggle.setAttribute('aria-expanded', 'false');
+                if (menu) menu.style.display = '';
+            }
+
+            function toggleNav() {
                 // Toggle Nav
                 nav.classList.toggle('nav-active');
 
@@ -419,8 +442,97 @@
                     }
                 });
 
-                // Burger Animation
+                // Burger Animation + ARIA
                 burger.classList.toggle('toggle');
+                const expanded = burger.getAttribute('aria-expanded') === 'true';
+                burger.setAttribute('aria-expanded', String(!expanded));
+
+                // If closing the nav, also close any open dropdowns
+                if (!nav.classList.contains('nav-active')) {
+                    closeAllDropdowns();
+                }
+            }
+
+            burger.addEventListener('click', toggleNav);
+            burger.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    toggleNav();
+                }
+            });
+
+            // Dropdowns: enable click + keyboard behavior with ARIA
+            const dropdownToggles = document.querySelectorAll('.has-dropdown > a');
+            dropdownToggles.forEach((toggle, idx) => {
+                const menu = toggle.nextElementSibling;
+                if (menu && menu.classList.contains('dropdown-menu')) {
+                    // ARIA wiring
+                    const menuId = menu.id || `dropdown-menu-${idx}`;
+                    menu.id = menuId;
+                    toggle.setAttribute('aria-haspopup', 'true');
+                    toggle.setAttribute('aria-expanded', 'false');
+                    toggle.setAttribute('aria-controls', menuId);
+                    menu.setAttribute('role', 'menu');
+                    menu.querySelectorAll('a').forEach(a => a.setAttribute('role', 'menuitem'));
+
+                    // Click handler: only intercept on mobile/nav-active
+                    toggle.addEventListener('click', function(e) {
+                        const isMobile = window.matchMedia('(max-width: 1024px)').matches || nav.classList.contains('nav-active');
+                        if (isMobile) {
+                            e.preventDefault();
+                            const isOpen = toggle.parentElement.classList.contains('open');
+                            closeAllDropdowns();
+                            if (!isOpen) {
+                                openDropdown(toggle);
+                            }
+                        }
+                    });
+
+                    // Keyboard handler
+                    toggle.addEventListener('keydown', function(e) {
+                        if (e.key === 'Enter' || e.key === ' ') {
+                            e.preventDefault();
+                            const isOpen = toggle.parentElement.classList.contains('open');
+                            if (isOpen) {
+                                closeDropdown(toggle);
+                            } else {
+                                closeAllDropdowns();
+                                openDropdown(toggle);
+                            }
+                        } else if (e.key === 'Escape') {
+                            closeDropdown(toggle);
+                            toggle.focus();
+                        }
+                    });
+                }
+            });
+
+            // Close menu when a nav link is clicked (useful on mobile)
+            navLinks.forEach(link => {
+                link.addEventListener('click', () => {
+                    if (nav.classList.contains('nav-active')) {
+                        nav.classList.remove('nav-active');
+                        burger.classList.remove('toggle');
+                        burger.setAttribute('aria-expanded', 'false');
+                        navLinks.forEach(l => (l.style.animation = ''));
+                        closeAllDropdowns();
+                    }
+                });
+            });
+
+            // Close dropdowns on outside click
+            document.addEventListener('click', function(e) {
+                const navbar = document.querySelector('.navbar');
+                if (navbar && !navbar.contains(e.target)) {
+                    closeAllDropdowns();
+                }
+            });
+
+            // Global Escape to close dropdowns
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    closeAllDropdowns();
+                }
             });
 
             // Smooth scroll for anchor links
